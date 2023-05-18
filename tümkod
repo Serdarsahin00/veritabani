@@ -1,0 +1,46 @@
+
+public class Main {
+    static  class Node{
+       int data; 
+        Node next;
+        Node(int d) {
+        data=d;
+        next=null;
+     
+        }
+   
+    }
+    static  void balonpozisyonubul(int N,int M){
+     Node head =new Node(1);
+     Node next=head;
+        for (int i = 2; i <=N; i++) {
+            Node newnode=new Node(i);
+            next.next=newnode;
+            next=newnode;
+        }
+       
+        next.next=head;
+        Node baslangıc = head; 
+        while (baslangıc.next!=baslangıc) {            
+            for (int i = 1; i < M; i++) { 
+                next=baslangıc;
+                baslangıc=baslangıc.next;
+            }
+            next.next=baslangıc.next;
+            baslangıc=next.next;
+        }
+        System.out.println("patlamayan balonun pozisyonu "+baslangıc.data);
+    }
+   
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("kaç tane balon olsun: ");
+        int N=scanner.nextInt();
+        System.out.println("M değerini giriniz: ");
+        int M=scanner.nextInt();
+        balonpozisyonubul(N, M);
+        
+      
+    }
+    
+}
