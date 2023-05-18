@@ -1,0 +1,12 @@
+
+  public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("kaç tane balon olsun: ");
+        int N=scanner.nextInt();
+        System.out.println("M değerini giriniz: ");
+        int M=scanner.nextInt();
+        balonpozisyonubul(N, M);
+        
+      
+    }
+    
